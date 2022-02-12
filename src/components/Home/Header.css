@@ -1,0 +1,26 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.header-time {
+  color: var(--text-color);
+  font-weight: 800;
+}
+
+.header-list {
+  display: flex;
+  justify-content: space-between;
+}
+
+.header-list__wifi {
+  margin: 0 10px;
+}
+
+.header-list__battery,
+.header-list__sinal,
+.header-list__wifi {
+  color: var(--text-color);
+  font-weight: 900;
+}
