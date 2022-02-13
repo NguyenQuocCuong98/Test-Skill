@@ -12,6 +12,5 @@
     "allowSyntheticDefaultImports": true,
     "jsxImportSource": "react"
   },
-  "include": ["src/**/*"],
-  "rewrites": [{ "source": "/(.*)", "destination": "/" }]
+  "include": ["src/**/*"]
 }
