@@ -14,6 +14,8 @@ const NewTodo: React.FC<{ onAddToDo: (text: string) => void }> = ({
       return;
     }
     onAddToDo(enteredText);
+    todoTextInput.current.value = "";
+    todoTextInput.current.focus();
   };
   return (
     <>

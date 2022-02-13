@@ -10,18 +10,20 @@ import { angleLeft } from "components/font/FontGlobal";
 import { useState } from "react";
 
 const Todolist: React.FC = () => {
-  const [todos, setTodos] = useState<TodoContainer[]>([]);
+  const todoStorage = JSON.parse(localStorage.getItem("todo"));
+  const [todos, setTodos] = useState<TodoContainer[]>(todoStorage ?? []);
   const onAddTodoHandler = (text: string) => {
     const newTodo = new TodoContainer(text);
     setTodos((preTodos) => {
-      return preTodos.concat(newTodo);
+      const data = preTodos.concat(newTodo);
+      const jsonData = JSON.stringify(data);
+      localStorage.setItem("todo", jsonData);
+      return data;
     });
   };
   const onCheckTodoHandler = (todoId: string) => {
     setTodos((preTodos) => {
-      return preTodos.filter((todo) =>
-        todo.id === todoId ? "line-through" : ""
-      );
+      return preTodos.filter((todo) => todo.id !== todoId);
     });
   };
   return (
