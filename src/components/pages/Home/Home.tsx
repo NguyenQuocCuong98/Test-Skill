@@ -1,9 +1,9 @@
 import "styles/Home.css";
 
-import CountryList from "./Countrylist";
+import CountryList from "../../Countrylist";
 import { FC } from "react";
-import Header from "./Header";
-import Todolist from "./Todolist";
+import Header from "../../Header";
+import Todolist from "../../Todolist";
 
 const Home: FC = () => {
   return (

@@ -43,3 +43,7 @@ input {
   border-radius: 8px;
   border: 1px solid #efefef;
 }
+
+.line-through {
+  text-decoration: line-through;
+}
