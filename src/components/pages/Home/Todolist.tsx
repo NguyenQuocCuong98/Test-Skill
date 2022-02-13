@@ -1,13 +1,11 @@
-import "./Todolist.css";
+import "styles/TodoList.css";
 
 import { FC } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { IconProp } from "@fortawesome/fontawesome-svg-core";
-import React from "react";
-import { faAngleRight } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
+import { angleRight } from "components/font/FontGlobal";
 
 const Todolist: FC = () => {
-  const faPropIcon = faAngleRight as IconProp;
   return (
     <div className="todoList">
       <div className="todoList-wrapper">
@@ -16,9 +14,11 @@ const Todolist: FC = () => {
         </div>
         <div className="todoList-description">Todo list</div>
       </div>
-      <div className="todoList-icon">
-        <FontAwesomeIcon icon={faPropIcon} />
-      </div>
+      <Link to="todo">
+        <div className="todoList-icon">
+          <FontAwesomeIcon icon={angleRight} />
+        </div>
+      </Link>
     </div>
   );
 };

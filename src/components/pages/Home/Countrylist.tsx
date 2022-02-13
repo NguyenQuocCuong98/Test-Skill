@@ -1,13 +1,12 @@
-import "./Countrylist.css";
+import "styles/CountryList.css";
 
 import { FC } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { IconProp } from "@fortawesome/fontawesome-svg-core";
+import { Link } from "react-router-dom";
 import React from "react";
-import { faAngleRight } from "@fortawesome/free-solid-svg-icons";
+import { angleRight } from "components/font/FontGlobal";
 
-const countryList: FC = () => {
-  const faPropIcon = faAngleRight as IconProp;
+const CountryList: FC = () => {
   return (
     <div className="countryList">
       <div className="countryList-wrapper">
@@ -16,11 +15,13 @@ const countryList: FC = () => {
         </div>
         <div className="countryList-description">Country list</div>
       </div>
-      <div className="countryList-icon">
-        <FontAwesomeIcon icon={faPropIcon} />
-      </div>
+      <Link to="country">
+        <div className="countryList-icon">
+          <FontAwesomeIcon icon={angleRight} />
+        </div>
+      </Link>
     </div>
   );
 };
 
-export default countryList;
+export default CountryList;
