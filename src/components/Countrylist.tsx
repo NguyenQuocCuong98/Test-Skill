@@ -1,4 +1,4 @@
-import "styles/CountryList.css";
+import "../styles/Countrylist.css";
 
 import { FC } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
