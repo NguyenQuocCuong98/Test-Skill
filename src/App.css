@@ -53,3 +53,18 @@ li {
   color: black;
   align-items: start;
 }
+.todo-container {
+  position: relative;
+  margin: 30px 0;
+}
+
+.todo-container h3 {
+  text-align: center;
+  color: var(--primary-color);
+}
+
+.todo-icon {
+  position: absolute;
+  left: 0;
+  color: var(--primary-color);
+}
