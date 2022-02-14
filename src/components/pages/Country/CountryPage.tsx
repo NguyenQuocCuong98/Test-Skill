@@ -1,7 +1,7 @@
 import Header from "components/Header";
 import React from "react";
 
-const Countrylist: React.FC = () => {
+const CountryPage: React.FC = () => {
   return (
     <section>
       <Header />
@@ -9,4 +9,4 @@ const Countrylist: React.FC = () => {
   );
 };
 
-export default Countrylist;
+export default CountryPage;

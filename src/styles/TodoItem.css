@@ -1,8 +1,19 @@
 .todo-item {
-  text-align: start;
-  margin: 1rem 0;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
-  padding: 1rem;
-  background-color: #f7f5ef;
-  color: black;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  margin: 8px auto;
+
+  padding: 16px;
+  border-radius: 20px;
+  width: 111%;
+}
+.todo-input {
+  padding: 15px 32px 15px 16px;
+  border-radius: 20px 0 0 20px;
+  border: 1px solid #dfe1e5;
+  outline: none;
+  background: transparent;
+  margin-right: 10px;
 }

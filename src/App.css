@@ -34,7 +34,7 @@ section {
   height: 812px;
 }
 
-input {
+.newTodo-input {
   position: relative;
   padding-left: 10px;
   width: 100%;
@@ -44,6 +44,12 @@ input {
   border: 1px solid #efefef;
 }
 
-.line-through {
+.completed {
   text-decoration: line-through;
+  opacity: 0.4;
+}
+
+li {
+  color: black;
+  align-items: start;
 }

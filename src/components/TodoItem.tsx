@@ -2,13 +2,22 @@ import "styles/TodoItem.css";
 
 import React from "react";
 
-const TodoItem: React.FC<{
-  text: string;
-  onCheckedTodo: () => void;
-}> = ({ text, onCheckedTodo }) => {
+interface todoItemProps {
+  todo: Todo;
+  toggleComplete: ToggleComplete;
+}
+const TodoItem: React.FC<todoItemProps> = ({ todo, toggleComplete }) => {
   return (
-    <li className="todo-item" onClick={onCheckedTodo}>
-      {text}
+    <li>
+      <label className={todo.complete ? "todo-item completed" : "todo-item"}>
+        <input
+          type="checkbox"
+          onChange={() => toggleComplete(todo)}
+          checked={todo.complete}
+          className="todo-input"
+        />
+        {todo.text}
+      </label>
     </li>
   );
 };

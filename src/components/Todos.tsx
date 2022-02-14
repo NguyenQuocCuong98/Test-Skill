@@ -1,21 +1,17 @@
 import "styles/Todos.css";
 
 import React from "react";
-import TodoContainer from "model/TodoContainer";
 import TodoItem from "./TodoItem";
 
-const Todos: React.FC<{
-  items: TodoContainer[];
-  onCheckedTodo: (id: string) => void;
-}> = ({ items, onCheckedTodo }) => {
+interface todoProps {
+  todos: Array<Todo>;
+  toggleComplete: ToggleComplete;
+}
+const Todos: React.FC<todoProps> = ({ todos, toggleComplete }) => {
   return (
     <ul className="todos">
-      {items.map((item) => (
-        <TodoItem
-          key={item.id}
-          text={item.text}
-          onCheckedTodo={onCheckedTodo.bind(null, item.id)}
-        />
+      {todos.map((todo) => (
+        <TodoItem key={todo.text} todo={todo} toggleComplete={toggleComplete} />
       ))}
     </ul>
   );

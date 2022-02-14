@@ -1,27 +1,36 @@
 import "styles/NewTodo.css";
 
-import React, { useRef } from "react";
+import React, { ChangeEvent, FormEvent, useState } from "react";
 
-const NewTodo: React.FC<{ onAddToDo: (text: string) => void }> = ({
-  onAddToDo,
-}) => {
-  const todoTextInput = useRef<HTMLInputElement>(null);
-  const submitHandler = (event: React.FormEvent) => {
-    event.preventDefault();
+interface newTodoProps {
+  addTodo: AddTodo;
+}
+const NewTodo: React.FC<newTodoProps> = ({ addTodo }) => {
+  const [newTodo, setNewTodo] = useState<string>("");
 
-    const enteredText = todoTextInput.current!.value; // ! ở đây chắc chắn phải là value không thể là null
-    if (enteredText.trim().length === 0) {
-      return;
-    }
-    onAddToDo(enteredText);
-    todoTextInput.current.value = "";
-    todoTextInput.current.focus();
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setNewTodo(e.target.value);
   };
+  const submitHandler = (event: React.FormEvent<HTMLButtonElement>) => {
+    event.preventDefault();
+    addTodo(newTodo);
+    setNewTodo("");
+  };
+
   return (
     <>
-      <form onSubmit={submitHandler}>
-        <input type="text" id="text" placeholder="Search" ref={todoTextInput} />
-        <button>Add</button>
+      <form>
+        <input
+          type="text"
+          id="text"
+          placeholder="On Add Todo"
+          value={newTodo}
+          onChange={handleChange}
+          className="newTodo-input"
+        />
+        <button type="submit" className="todo-button" onClick={submitHandler}>
+          Add
+        </button>
       </form>
       <h4>
         There are
