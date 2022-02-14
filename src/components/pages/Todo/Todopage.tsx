@@ -1,4 +1,4 @@
-import "../../../styles/TodoPage.css";
+import "styles/TodoPage.css";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Header from "components/Header";
