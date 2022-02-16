@@ -2,10 +2,10 @@ import "./App.css";
 
 import { Route, Routes } from "react-router-dom";
 
-import CountryPage from "components/pages/Country/CountryPage";
+import CountryPage from "pages/Country/CountryPage";
 import { FC } from "react";
-import Home from "./components/pages/Home/Home";
-import TodoPage from "components/pages/Todo/Todopage";
+import Home from "pages/Home/Home";
+import TodoPage from "pages/Todo/Todopage";
 
 const App: FC = () => {
   return (

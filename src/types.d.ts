@@ -4,3 +4,7 @@ type Todo = {
   complete: boolean;
 };
 type ToggleComplete = (selectedTodo: Todo) => void;
+type Country = {
+  name: string;
+  id: number;
+};

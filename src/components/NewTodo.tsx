@@ -1,17 +1,27 @@
 import "styles/NewTodo.css";
 
-import React, { ChangeEvent, FormEvent, useState } from "react";
+import React, {
+  ChangeEvent,
+  FormEvent,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
 
 interface newTodoProps {
   addTodo: AddTodo;
 }
 const NewTodo: React.FC<newTodoProps> = ({ addTodo }) => {
+  const inputRef = useRef<HTMLInputElement>(null);
+  useEffect(() => {
+    inputRef.current.focus();
+  });
   const [newTodo, setNewTodo] = useState<string>("");
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     setNewTodo(e.target.value);
   };
-  const submitHandler = (event: React.FormEvent<HTMLButtonElement>) => {
+  const submitHandler = (event: FormEvent<HTMLButtonElement>) => {
     event.preventDefault();
     addTodo(newTodo);
     setNewTodo("");
@@ -26,6 +36,7 @@ const NewTodo: React.FC<newTodoProps> = ({ addTodo }) => {
           placeholder="On Add Todo"
           value={newTodo}
           onChange={handleChange}
+          ref={inputRef}
           className="newTodo-input"
         />
         <button type="submit" className="todo-button" onClick={submitHandler}>

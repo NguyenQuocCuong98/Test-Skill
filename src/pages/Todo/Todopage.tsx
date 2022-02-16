@@ -1,8 +1,8 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Header from "components/Header";
 import { Link } from "react-router-dom";
-import NewTodo from "../../NewTodo";
-import Todos from "../../Todos";
+import NewTodo from "components/NewTodo";
+import Todos from "components/Todos";
 import { angleLeft } from "components/font/FontGlobal";
 import { useState } from "react";
 
@@ -11,6 +11,7 @@ const Todolist: React.FC = () => {
 
   const toggleComplete: ToggleComplete = (selectedTodo) => {
     const updatedTodos = todos.map((todo) => {
+      console.log(todo);
       if (todo === selectedTodo) {
         return { ...todo, complete: !todo.complete };
       }
@@ -20,6 +21,7 @@ const Todolist: React.FC = () => {
   };
 
   const onAddTodoHandler: AddTodo = (newTodo) => {
+    console.log(newTodo);
     if (newTodo !== "") {
       setTodos([...todos, { text: newTodo, complete: false }]);
     }
